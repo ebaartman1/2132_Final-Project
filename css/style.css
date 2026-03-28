@@ -1,0 +1,266 @@
+/* Root Palette */
+:root {
+  --color-text-dark: #1a1a1a;
+  --color-text-light: #ffffff;
+  --color-background: #ffffff;
+  --color-muted-light: #f3f3f3;
+  --color-muted-dark: #ebebeb;
+  --color-accent-secondary: #d8db9c;
+  --color-accent-tertiary: #116142;
+  --color-info: #d3e9dc;
+  --color-warning: #eab676;
+  --color-border: #dddddd;
+  --color-success-bg: #6bf057;
+  --color-error-bg: #ea3131;
+  --color-accent-emphasis: #5b0b0b;
+  --padding-content: 30px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+html,
+body {
+  min-height: 100vh;
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+}
+
+body {
+  font-family: "Quicksand", Arial, sans-serif;
+}
+
+/* Header */
+#site-header {
+  background-color: var(--color-accent-tertiary);
+  padding: 16px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0.5rem 0;
+}
+
+.logo {
+  max-height: 60px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.logo:hover {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.page-title {
+  color: var(--color-accent-secondary);
+  font-family: "Lobster", cursive;
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+/* Main Layout */
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--padding-content);
+  background-image: url("../image/background-2.jpg");
+  background-repeat: repeat;
+  background-position: top center;
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Main Game Panel */
+.panel.single-article.game-panel {
+  background-color: rgba(255, 255, 255, 0.94);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12);
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Headings */
+h2 {
+  font-family: "Lobster", cursive;
+  color: var(--color-text-dark);
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.intro-text {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Hint */
+.hint-box {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-background);
+  margin-bottom: 1rem;
+}
+
+/* Plant */
+.plant-area {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#plant-image {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* Combined Status */
+.status-box {
+  margin: 0 auto 1rem;
+  max-width: 320px;
+  padding: 0.85rem 1rem;
+  background-color: var(--color-info);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+#game-status {
+  margin: 0;
+}
+
+/* Word */
+.word-box {
+  margin-bottom: 1.25rem;
+}
+
+#word-display {
+  font-size: 2rem;
+  letter-spacing: 0.25rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Letter Buttons */
+.letters-panel {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.letter-buttons {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.letter-button,
+#play-again-button {
+  padding: 0.65rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-family: "Quicksand", Arial, sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease, opacity 0.2s ease;
+}
+
+.letter-button {
+  background-color: var(--color-muted-light);
+  font-size: 1rem;
+}
+
+.letter-button:hover {
+  background-color: var(--color-muted-dark);
+  transform: translateY(-2px);
+}
+
+.letter-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+/* Play Again */
+.controls-box {
+  margin-top: 0.5rem;
+}
+
+#play-again-button {
+  background-color: var(--color-accent-secondary);
+}
+
+#play-again-button:hover {
+  background-color: var(--color-muted-dark);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  main {
+    padding: 16px;
+  }
+  .header-inner {
+    flex-direction: column;
+  }
+  .page-title {
+    font-size: 2.2rem;
+  }
+  .content-wrapper {
+    padding: 12px;
+  }
+  #plant-image {
+    max-width: 220px;
+  }
+}
+@media (max-width: 480px) {
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+  #site-header {
+    padding: 12px;
+  }
+  main {
+    padding: 12px;
+  }
+  .page-title {
+    font-size: 1.7rem;
+  }
+  .panel.single-article.game-panel {
+    padding: 1.25rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  #word-display {
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+  }
+  .letter-buttons {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

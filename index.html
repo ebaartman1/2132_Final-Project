@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Monstera Hangman - COMP2132 Final Project</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/finalproject.js" defer="defer"></script>
+</head>
+
+<body>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <img src="favicons/favicon-96x96.png" alt="Monstera Hangman logo" class="logo">
+      <h1 class="page-title">2132 - Hangman</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="content-wrapper">
+
+      <section class="panel single-article game-panel">
+        <h2>Save the Plant</h2>
+        <p class="intro-text">
+          Guess the hidden word one letter at a time before all the monstera leaves fall off.
+        </p>
+
+        <section class="hint-box">
+          <p><strong>Hint:</strong> <span id="hint-text">Loading hint...</span></p>
+        </section>
+
+        <div class="plant-area">
+          <img id="plant-image" src="image/6_leaves.png" alt="Plant with 6 leaves remaining">
+        </div>
+
+        <section class="status-box">
+          <p id="game-status">Wrong guesses: 0 / 6</p>
+        </section>
+
+        <section class="word-box">
+          <p id="word-display">_ _ _ _ _</p>
+        </section>
+
+        <section class="letters-panel">
+          <div id="letter-buttons" class="letter-buttons"></div>
+        </section>
+
+        <section class="controls-box">
+          <button id="play-again-button" type="button">Play Again</button>
+        </section>
+      </section>
+
+    </div>
+  </main>
+
+</body>
+
+</html>
