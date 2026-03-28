@@ -22,6 +22,14 @@ const game = {
 loadWords();
 playAgainButton.addEventListener("click", startNewGame);
 
+function animatePlantImage() {
+	plantImage.classList.remove("flash-plant-border");
+
+	void plantImage.offsetWidth;
+
+	plantImage.classList.add("flash-plant-border");
+}
+
 function loadWords() {
 	fetch("json/words.json")
 		.then(function(response) {
@@ -102,7 +110,7 @@ function handleLetterGuess(event) {
 	} else {
 		game.wrongGuesses++;
 		updateGameStatus();
-		updatePlantImage();
+		updatePlantImage(true);
 		checkForLoss();
 	}
 }
@@ -127,10 +135,14 @@ function updateGameStatus() {
 	gameStatus.textContent = `Wrong guesses: ${game.wrongGuesses} / ${game.maxWrongGuesses}`;
 }
 
-function updatePlantImage() {
+function updatePlantImage(shouldAnimate = false) {
 	const leavesRemaining = 6 - game.wrongGuesses;
 	plantImage.setAttribute("src", `image/${leavesRemaining}_leaves.png`);
 	plantImage.setAttribute("alt", `Plant with ${leavesRemaining} leaves remaining`);
+
+	if (shouldAnimate === true) {
+	animatePlantImage();
+	}
 }
 
 function checkForWin() {
